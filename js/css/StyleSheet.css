@@ -1,0 +1,225 @@
+body {
+  background-image:url("http://127.0.0.1:5000/js/css/uploads/book_background_like-1.jpg");
+	background-size:cover;
+	background-position:center;
+	background-attachment:fixed;
+}
+#header
+{
+	height:100px;
+                   margin:0px 0px 0px 0px;
+
+	background-color:#ffcc00;
+	margin-top:30px;
+	position:relative;
+}
+#title{
+	float:left;
+	font-family:"Helvetica Neue","sans-serif";
+	color:black;
+	margin-left:5px;
+	margin-top:5px;
+	font-size:40px;
+}
+#slogan
+{
+
+ float: left;
+ display:inline;
+  font-size: 20px;
+  margin-left:0px;
+  padding-top: 60px;
+
+}
+#nav{
+	padding-top:30px;
+	display:inline;
+  float:right;
+    height:auto;
+
+
+
+}
+
+
+ul {
+  display: inline;
+
+   padding: 12.5px 4px 20px 0px;
+  background: #fff;
+
+
+
+
+ }
+
+ul li {
+  font: bold sans-serif;
+  display: inline-block;
+  font-family:"Times New Roman","Times","serif";
+  float:right;
+  font-size:25px;
+  margin-right: -4px;
+  position: relative;
+  padding: 14.5px 20px 14.5px 20px;
+  background:black;
+  color:#FFCC00;
+  cursor: pointer;
+   border-style: solid;
+  border-radius: 5px;
+  border-color: black;
+}
+
+
+ul li:hover {
+  background: #FFCC00;
+  border-style: solid;
+  border-radius: 5px;
+  height: auto;
+  color: black;
+}
+
+a
+{
+	color:#FFCC00;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color:black;
+
+}
+
+
+ul li ul {
+	padding:0px;
+	margin-left: -0px;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 2;
+  width: 200px;
+  visibility: hidden;
+  }
+
+  ul li ul li {
+  background:black;
+  display: block;
+  color:#FFCC00;
+   width: 200px;
+   border-style: solid;
+   border-radius:0px;
+  }
+ul li ul li:hover
+ {
+ 	background:#FFCC00;
+ 	color: black;
+ 	width: 200px;
+  	border-style: inset;
+       border-style: solid;
+   border-radius:0px;
+
+}
+
+ul li:hover ul
+ {
+
+  visibility: visible;
+}
+
+#logo{
+	margin-left:10px;
+	width:20px;
+	float:left;
+}
+.col_0{width:900px;
+              margin:30px 50px 0px 150px;
+              background:black;
+             height:150px;
+             clear:both;
+            color:white;
+			 opacity:0.95;
+              padding:30px;
+
+}
+.col_1{
+
+	width:900px;
+	margin:30px 50px 0px 150px  ;
+                   padding:10px 10px 10px 10px;
+	height:500px;
+	clear:both;
+	background:black;
+	color: white;                                             /*#85E0FF*/
+	font-size:25px;
+	background:rgba(0,0,0,0.5);
+	position:relative;
+}
+
+img{
+ opacity:1;
+
+}
+.col_3{
+	float:right;
+	margin:100px 30px 10px 10px ;
+	width:550px;
+	height:600px;
+                   color: white;
+	font-size:25px;
+	background:rgba(0,0,0,0.8);
+	padding:10px 10px 10px 10px;
+	position:relative;
+
+}
+.col_2{
+	float:left;
+	margin:100px 30px 10px 10px;
+	width:550px;
+	height:600px;
+                   color: white;
+	font-size:25px;
+	padding:10px 10px 10px 10px;
+                   background:rgba(0,0,0,0.8);
+	position:relative;
+
+}
+
+#button:hover
+{
+  border-style: outset;
+  float: left;
+}
+div.footer {
+	clear:both;
+float:below;
+background:black;
+color:  white;
+margin-left:0;
+background:rgba(0,0,0,0.8);
+height: auto;
+
+margin-top: 30px;
+font-size: 20px;
+
+}
+td, th, table  {
+    padding: 15px;
+color:white;
+border: 1px   solid white;
+
+}
+/*.col_4{
+
+	width:900px;
+	margin:30px 50px 0px 150px ;
+	height:910px;
+	clear:both;
+	background:black;
+	color: white;                                             /*#85E0FF*/
+	padding:30px;
+	font-size:25px;
+	opacity:0.8;
+	position:relative;
+}*/

@@ -1,0 +1,6 @@
+<!doctype html>
+<title>Files for download</title>
+{% for file in dloads %}
+    <a href="{{ dloads[loop.index0] }}" download>{{ file }}</a>
+{% endfor %}
+</html>

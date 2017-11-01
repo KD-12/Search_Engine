@@ -1,0 +1,138 @@
+  <html lang="en">
+      <head>
+          <link rel="stylesheet" href="http://127.0.0.1:5000/js/css/StyleSheet.css" type="text/css"/>
+
+<script src="feedback.js"type="text/javascript"></script>
+<meta charset="utf-8" />
+<title>Ebook Portal</title>
+<style>
+</style>
+</head>
+<script>
+function validate()
+{ var n1=/^([a-zA-Z])+\s([a-zA-Z])+$/;
+var x=n1.test(document.forms["feedback"]["name"].value);
+var e1=/^([A-Za-z0-9_\-\.])*\@([A-Za-z0-9_\-\.])*\.([A-Za-z]{2,4})$/;
+var y=e1.test(document.forms["feedback"]["email"].value);
+if(document.forms["feedback"]["name"].value=="")
+{
+alert('please enter you name');
+return false;}
+if(x==false)
+{alert('invalid name');
+return false;}
+if(document.forms["feedback"]["email"].value=="")
+{
+alert('please enter you email');
+return false;}
+if(y==false)
+{alert('invalid email');
+return false;}
+if(document.forms["feedback"]["mob"].value=="")
+{
+alert('please enter you mobile number');
+return false;}
+
+}
+</script>
+<body style="background-image:url(http://127.0.0.1:5000/js/css/uploads/book_background_like-2.jpg)">
+
+  <div id="header">
+		<div id="title"><i>Reader's Paradise</i></div>
+		<div id="slogan">Dive into the world of reading!</div>
+		<div id="nav">
+		<ul>
+		<a href="http://127.0.0.1:5000/js/feedback.html"><li><span class="fa fa-users"></span>&nbsp;FEEDACK</li></a>
+    <a href="#"><li>&nbsp;DATA VISUALISATION
+      <ul>
+  		<a href="http://127.0.0.1:5000/js/datavisualisation.html"><li>&nbsp;DOCUMENT SIMILARITY</li></a>
+  		<a href="http://127.0.0.1:5000/js/visualization_word.html"><li>&nbsp;WORD SIMILARITY</li></a>
+  		</ul>
+
+</li></a>
+
+    <a href="http://127.0.0.1:5000/js/search.html"><li>&nbsp;SEARCH</li></a>
+		<a href="http://127.0.0.1:5000/js/home.html"><li><span class="fa fa-home"></span>HOME</li></a>
+		</ul>
+		</div>
+  </div>
+		<div class="col_1" style="height:auto;width:500px;padding-left:100px;">
+<p class="pf">
+Thankyou for choosing to send us your valuable feedback.<br>
+ <br>
+ You are encouraged to use the online feedback form below to send us your valuable comments and suggestions as well as
+ any queries about our services and ebook that you may have.<br><br><br><br></p>
+ <form onsubmit="return validate()" name="feedback" action="home.html" method="get">
+ NAME:
+<input type="text" name="name" placeholder="Enter full name">
+<br><br>
+E-MAIL:
+<input type="text" name="email" placeholder="Email address" >
+<br><br>
+MOBILE NUMBER:
+<input type="number" name="mob" placeholder=" Contact number" size="10">
+<br><br>
+How would you rate your opinion on our portal?<br>
+<input type="radio" name="rateing" value="Very High">Very High
+<br>
+<input type="radio" name="rateing" value=" High">High
+<br>
+<input type="radio" name="rateing" value="Neutral">Neutral
+<br>
+<input type="radio" name="rateing" value="Low">Low
+<br>
+<input type="radio" name="rateing" value="Very Low">Very Low
+<br><br>
+What do you think about the geners made available through this portal ?<br>
+<input type="radio" name="rates" value="Poor">Poor
+<br>
+
+<input type="radio" name="rates" value="Average">Average
+<br>
+<input type="radio" name="rates" value="Excellent">Excellent
+
+<br><br>
+How would you rate our customer support?<br>
+<input type="radio" name="support" value="Very High">Very High
+<br>
+<input type="radio" name="support" value=" High">High
+<br>
+<input type="radio" name="support" value="Neutral">Neutral
+<br>
+<input type="radio" name="support" value="poor">poor
+<br>
+<input type="radio" name="support" value="Terrible">Terrible
+<br><br>
+How willing are you to recommend our portal to others?<br>
+<input type="radio" name="recommend" value="Very Willing">Very Willing
+<br>
+<input type="radio" name="recommend" value=" Willing">Willing
+<br>
+<input type="radio" name="recommend" value="Neutral">Neutral
+<br>
+<input type="radio" name="recommend" value="Unwilling">Unwilling
+<br>
+<input type="radio" name="recommend" value="Very Unwilling">Very Unwilling
+<br><br>
+Are there any services that we don't currently have that you are willing to see?<br>
+<textarea name="suggestion" rows="10" cols="30"></textarea>
+<br><br>
+Do you have any comments for us(Good or Bad):<br>
+<textarea name="comments" rows="10" cols="30"></textarea>
+<br><br>
+<input type="submit" value="Submit">
+<input type="reset" name="Reset">
+</form>
+</div>
+<div class="footer">
+
+<p>&copy; , INC. ALL RIGHTS RESERVED</p>
+<p style="text-align:right;margin-right:40px;margin-top:-40px;"> CONTACT US
+<br>
+<b>CALL-9890-420-420</b><br>
+<b><a href="mailto:mmohan@gmail.com">
+<font color="white">EMAIL-mmohan@gmail.com</a></b></font>
+</p>
+</div>
+</body>
+</html>

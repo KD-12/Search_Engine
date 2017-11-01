@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/StyleSheet.css" type="text/css">
+<link rel="stylesheet" href="css/style2.css" type="text/css">
+
+
+
+	</head>
+<body style="background-image:url(http://127.0.0.1:5000/js/css/uploads/book_background_like-1.jpg)">
+		 <div id="header">
+		<div id="title"><i>Reader's Paradise</i></div>
+		<div id="slogan">Dive into the world of reading!</div>
+		<div id="nav">
+		<ul>
+		<a href="http://127.0.0.1:5000/js/feedback.html"><li>&nbsp;FEEDACK</li></a></li>
+    <a href="#"><li>&nbsp;DATA VISUALISATION
+      <ul>
+  		<a href="http://127.0.0.1:5000/js/datavisualisation.html"><li>&nbsp;DOCUMENT SIMILARITY</li></a>
+  		<a href="http://127.0.0.1:5000/js/visualization_word.html"><li>&nbsp;WORD SIMILARITY</li></a>
+  		</ul>
+
+</li></a>
+
+   <a href="http://127.0.0.1:5000/js/search.html"><li>&nbsp;SEARCH</li></a>
+		<a href="http://127.0.0.1:5000/js/home.html"><li>HOME</li></a>
+
+
+		</ul>
+		</div>
+</div>
+
+        <div class="col_1" style="height:925px;background:rgba(255,255,255,0.5);width:925px "  >
+
+<style>
+
+
+
+#circle circle {
+fill: none;
+pointer-events: all;
+}
+
+.group path {
+fill-opacity: .5;
+}
+
+path.chord {
+stroke: #000;
+stroke-width: 0.25px;
+}
+
+#circle:hover path.fade {
+display: none;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<script src="http://d3js.org/d3.v2.min.js?2.8.1"></script>
+<script>
+
+var width = 720,
+height = 1000,
+outerRadius = Math.min(width, height) / 2 - 115,
+innerRadius = outerRadius - 100;
+
+var formatPercent = d3.format(".1%");
+
+var arc = d3.svg.arc()
+.innerRadius(innerRadius)
+.outerRadius(outerRadius);
+
+var layout = d3.layout.chord()
+.padding(.2)
+.sortSubgroups(d3.descending)
+.sortChords(d3.ascending);
+
+var path = d3.svg.chord()
+.radius(innerRadius);
+
+function startAngle(d) { return d.startAngle + offset; }
+function endAngle(d) { return d.endAngle + offset; }
+
+
+var svg = d3.select('.col_1').append("svg")
+.attr("width", width)
+.attr("height", height)
+.append("g")
+.attr("id", "circle")
+.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+svg.append("circle")
+.attr("r", outerRadius);
+
+d3.csv("http://127.0.0.1:5000/js/dataset-3_word.csv", function(word) {
+d3.json("http://127.0.0.1:5000/js/word_cos_dist.json", function(word_cos_dist) {
+
+// Compute the chord layout.
+layout.matrix(word_cos_dist);
+
+// Add a group per neighborhood.
+var group = svg.selectAll(".group")
+.data(layout.groups)
+.enter().append("g")
+.attr("class", "group")
+.on("mouseover", mouseover);
+
+
+
+// Add a mouseover title.
+// group.append("title").text(function(d, i) {
+// return doc[i].doc + ": " + formatPercent(d.value) + " of origins";
+// });
+
+// Add the group arc.
+var groupPath = group.append("path")
+.attr("id", function(d, i) { return "group" + i; })
+.attr("d", arc)
+.style("fill", function(d, i) { return word[i].color; });
+
+
+// Add a text label.
+var groupText = group.append("text")
+
+.attr("x", 50)
+.attr("dy", 200)
+
+.attr("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
+.attr("transform", function(d,i) {
+  var c = arc.centroid(d);
+  return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")"
+		+ "translate(" + (innerRadius + 500) + ")"
+		+ (d.angle > Math.PI ? "rotate(180)" : "");
+})
+
+groupText.append("textPath")
+.attr("xlink:href", function(d, i) { return "#group" + i; })
+.text(function(d, i) { return word[i].word; });
+
+// Remove the labels that don't fit. :(
+groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
+.remove();
+
+
+
+
+
+
+
+// Add the chords.
+var chord = svg.selectAll(".chord")
+.data(layout.chords)
+.enter().append("path")
+.attr("class", "chord")
+.style("fill", function(d) { return word[d.source.index].color; })
+.attr("d", path);
+
+// Add an elaborate mouseover title for each chord.
+ chord.append("title").text(function(d) {
+ return word[d.source.index].word
+ + " ? " + word[d.target.index].word
+ + ": " + formatPercent(d.source.value)
+ + "\n" + word[d.target.index].word
+ + " ? " + word[d.source.index].word
+ + ": " + formatPercent(d.target.value);
+ });
+
+function mouseover(d, i) {
+chord.classed("fade", function(p) {
+return p.source.index != i
+&& p.target.index != i;
+});
+}
+});
+});
+
+</script>
+
+
+
+
+
+
+        </div>
+<div class="footer">
+
+<p>&copy; , INC. ALL RIGHTS RESERVED</p>
+<p style="text-align:right;margin-right:40px;margin-top:-40px;"> CONTACT US
+<br>
+<b>CALL-9890-420-420</b><br>
+<b><a href="mailto:mmohan@gmail.com">
+<font color="white">EMAIL-mmohan@gmail.com</a></b></font>
+</p>
+</div>
+</body>
